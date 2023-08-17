@@ -68,15 +68,7 @@ class GromoreRewardCallBack {
   ///
   /// [onAdInfo] 广告信息
   ///
-  GromoreRewardCallBack(
-      {this.onShow,
-      this.onClick,
-      this.onClose,
-      this.onFail,
-      this.onVerify,
-      this.onReady,
-      this.onUnReady,
-      this.onAdInfo});
+  GromoreRewardCallBack({this.onShow, this.onClick, this.onClose, this.onFail, this.onVerify, this.onReady, this.onUnReady, this.onAdInfo});
 }
 
 ///信息流广告回调
@@ -96,7 +88,7 @@ class GromoreNativeCallBack {
   /// [onFail] 加载失败  [code] [message]
   ///
   /// [onAdInfo] 广告信息
-  GromoreNativeCallBack({this.onShow, this.onClick, this.onClose, this.onFail,this.onAdInfo});
+  GromoreNativeCallBack({this.onShow, this.onClick, this.onClose, this.onFail, this.onAdInfo});
 }
 
 ///信息流广告回调
@@ -116,5 +108,31 @@ class GromoreBannerCallBack {
   /// [onFail] 加载失败  [code] [message]
   ///
   /// [onAdInfo] 关闭
-  GromoreBannerCallBack({this.onShow, this.onClick, this.onClose, this.onFail,this.onAdInfo});
+  GromoreBannerCallBack({this.onShow, this.onClick, this.onClose, this.onFail, this.onAdInfo});
+}
+
+///信息流广告回调
+class GromoreSplashCallBack {
+  GroShow? onShow;
+  GroFail? onFail;
+  GroSkip? onSkip;
+  GroFinish? onFinish;
+  GroAdInfo? onAdInfo;
+  GroClose? onClose;
+  GroClick? onClick;
+
+  ///[onShow] 展示
+  ///
+  /// [onSkip] 跳过
+  ///
+  /// [onTimeOut] 超时
+  ///
+  /// [onFinish] 完成
+  ///
+  /// [onFail] 加载失败  [code] [message]
+  ///
+  /// [onADTick] 倒计时
+  ///
+  /// [onAdInfo] 关闭
+  GromoreSplashCallBack({this.onShow, this.onSkip, this.onFinish, this.onFail, this.onClose, this.onAdInfo, this.onClick});
 }

@@ -3,7 +3,6 @@
 /// @Email gstory0404@gmail.com
 /// @Description: 类型
 
-
 ///广告类型
 class GromoreAdType {
   static const String adType = "adType";
@@ -64,6 +63,7 @@ class GromoreAdMethod {
 
   ///广告信息回调
   static const String onAdInfo = "onAdInfo";
+
+  ///广告跳过回调
+  static const String onSkip = "onSkip";
 }
-
-

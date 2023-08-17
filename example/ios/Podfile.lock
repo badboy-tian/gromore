@@ -1,0 +1,85 @@
+PODS:
+  - Ads-CN (5.3.0.4):
+    - Ads-CN/BUAdSDK (= 5.3.0.4)
+  - Ads-CN/BUAdSDK (5.3.0.4):
+    - BURelyFoundation/CSJ (= 0.3.0.3)
+  - BURelyFoundation/AFNetworking (0.3.0.3)
+  - BURelyFoundation/BURelyFoundation (0.3.0.3)
+  - BURelyFoundation/CSJ (0.3.0.3):
+    - BURelyFoundation/BURelyFoundation
+    - BURelyFoundation/HM
+    - BURelyFoundation/NETWork
+  - BURelyFoundation/HM (0.3.0.3)
+  - BURelyFoundation/NETWork (0.3.0.3):
+    - BURelyFoundation/AFNetworking
+  - Flutter (1.0.0)
+  - gromore (0.0.1):
+    - Ads-CN (~> 5.3.0.4)
+    - Flutter
+    - MJExtension (~> 3.4.0)
+  - MintegralAdSDK (7.4.2):
+    - MintegralAdSDK/BannerAd (= 7.4.2)
+    - MintegralAdSDK/BidBannerAd (= 7.4.2)
+    - MintegralAdSDK/BidInterstitialVideoAd (= 7.4.2)
+    - MintegralAdSDK/BidNativeAd (= 7.4.2)
+    - MintegralAdSDK/BidNewInterstitialAd (= 7.4.2)
+    - MintegralAdSDK/BidRewardVideoAd (= 7.4.2)
+    - MintegralAdSDK/InterstitialVideoAd (= 7.4.2)
+    - MintegralAdSDK/NativeAd (= 7.4.2)
+    - MintegralAdSDK/NewInterstitialAd (= 7.4.2)
+    - MintegralAdSDK/RewardVideoAd (= 7.4.2)
+  - MintegralAdSDK/BannerAd (7.4.2):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidBannerAd (7.4.2):
+    - MintegralAdSDK/BannerAd
+    - MintegralAdSDK/BidNativeAd
+  - MintegralAdSDK/BidInterstitialVideoAd (7.4.2):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/InterstitialVideoAd
+  - MintegralAdSDK/BidNativeAd (7.4.2):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidNewInterstitialAd (7.4.2):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/NewInterstitialAd
+  - MintegralAdSDK/BidRewardVideoAd (7.4.2):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/RewardVideoAd
+  - MintegralAdSDK/InterstitialVideoAd (7.4.2):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/NativeAd (7.4.2)
+  - MintegralAdSDK/NewInterstitialAd (7.4.2):
+    - MintegralAdSDK/InterstitialVideoAd
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/RewardVideoAd (7.4.2):
+    - MintegralAdSDK/NativeAd
+  - MJExtension (3.4.1)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - gromore (from `.symlinks/plugins/gromore/ios`)
+  - MintegralAdSDK
+
+SPEC REPOS:
+  trunk:
+    - Ads-CN
+    - BURelyFoundation
+    - MintegralAdSDK
+    - MJExtension
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  gromore:
+    :path: ".symlinks/plugins/gromore/ios"
+
+SPEC CHECKSUMS:
+  Ads-CN: b87c8df100e37fbfd12feca669c6486d788ea7ad
+  BURelyFoundation: 7de2625b5c23a689b82ce9820f9231dcd1f8f739
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  gromore: 857ed0235436d1362e2fc01b47e4f993f059ed35
+  MintegralAdSDK: a7da9c65b3dd69e8194a7b26cec7068b2bade7cc
+  MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
+
+PODFILE CHECKSUM: 2549920f5e865e1ec821003e5de28db2948c2ed8
+
+COCOAPODS: 1.12.1
