@@ -150,6 +150,9 @@ class _GromoreSplashAdState extends State<GromoreSplashAd> {
       case GromoreAdMethod.onSkip:
         widget.callBack?.onSkip!();
         break;
+      case GromoreAdMethod.onReady:
+        widget.callBack?.onReady!();
+        break;
     }
   }
 }

@@ -89,15 +89,29 @@
 # pragma mark ---<BUSplashAdDelegate>---
 
 - (void)splashAdLoadSuccess:(BUSplashAd *)splashAd {
+    [[GroLogUtil sharedInstance] print:@"开屏广告加载成功回调"];
        // 方式二、使用新创建的视图控制器接入，需要自己管理viewController的展示和关闭：
         [splashAd showSplashViewInRootViewController:[UIViewController jsd_getRootViewController]];
+    [self.channel invokeMethod:@"onReady" arguments:nil result:nil];
 }
 
 - (void)splashAdRenderSuccess:(BUSplashAd *)splashAd {
-    [[GroLogUtil sharedInstance] print:@"开屏广告加载成功回调"];
+    [[GroLogUtil sharedInstance] print:@"开屏广告渲染成功回调"];
+    /*[self.container addSubview:splashAd.splashView];
+    NSDictionary *dictionary = @{@"width": @(splashAd.splashView.frame.size.width),@"height":@(splashAd.splashView.frame.size.height)};
+    [self.channel invokeMethod:@"onShow" arguments:dictionary result:nil];*/
+}
+
+- (void)splashAdWillShow:(BUSplashAd *)splashAd {
+    [[GroLogUtil sharedInstance] print:@"开屏广告splashAdWillShow"];
+    [[GroLogUtil sharedInstance] print:@"开屏广告渲染成功回调"];
     [self.container addSubview:splashAd.splashView];
     NSDictionary *dictionary = @{@"width": @(splashAd.splashView.frame.size.width),@"height":@(splashAd.splashView.frame.size.height)};
     [self.channel invokeMethod:@"onShow" arguments:dictionary result:nil];
+}
+
+- (void)splashAdDidShow:(BUSplashAd *)splashAd {
+    [[GroLogUtil sharedInstance] print:@"开屏广告splashAdDidShow"];
 }
 
 - (void)splashAdRenderFail:(BUSplashAd *)splashAd error:(BUAdError *)error {
@@ -122,7 +136,7 @@
 }
 
 - (void)splashAdDidClose:(BUSplashAd *)splashAd closeType:(BUSplashAdCloseType)closeType {
-    [[GroLogUtil sharedInstance] print:@"开屏广告关闭"];
+    [[GroLogUtil sharedInstance] print:@"开屏广告关闭splashAdDidClose"];
     [self.container removeFromSuperview];
     [self.channel invokeMethod:@"onClose" arguments:nil result:nil];
 }
@@ -132,7 +146,7 @@
 }
 
 - (void)splashAdViewControllerDidClose:(BUSplashAd *)splashAd {
-    [[GroLogUtil sharedInstance] print:@"开屏广告关闭"];
+    [[GroLogUtil sharedInstance] print:@"开屏广告关闭splashAdViewControllerDidClose"];
     [self.container removeFromSuperview];
     [self.channel invokeMethod:@"onClose" arguments:nil result:nil];
 }

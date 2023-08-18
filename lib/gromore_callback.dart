@@ -120,19 +120,16 @@ class GromoreSplashCallBack {
   GroAdInfo? onAdInfo;
   GroClose? onClose;
   GroClick? onClick;
+  GroReady? onReady;
 
   ///[onShow] 展示
   ///
   /// [onSkip] 跳过
   ///
-  /// [onTimeOut] 超时
-  ///
   /// [onFinish] 完成
   ///
-  /// [onFail] 加载失败  [code] [message]
-  ///
-  /// [onADTick] 倒计时
+  /// [onFail] 加载失败
   ///
   /// [onAdInfo] 关闭
-  GromoreSplashCallBack({this.onShow, this.onSkip, this.onFinish, this.onFail, this.onClose, this.onAdInfo, this.onClick});
+  GromoreSplashCallBack({this.onShow, this.onSkip, this.onFinish, this.onFail, this.onClose, this.onAdInfo, this.onClick, this.onReady});
 }
