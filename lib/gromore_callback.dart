@@ -51,6 +51,7 @@ class GromoreRewardCallBack {
   GroReady? onReady;
   GroUnReady? onUnReady;
   GroAdInfo? onAdInfo;
+  GroShow? onPopShow;
 
   ///[onShow] 展示
   ///
@@ -68,7 +69,19 @@ class GromoreRewardCallBack {
   ///
   /// [onAdInfo] 广告信息
   ///
-  GromoreRewardCallBack({this.onShow, this.onClick, this.onClose, this.onFail, this.onVerify, this.onReady, this.onUnReady, this.onAdInfo});
+  /// [onPopShow] pop
+  ///
+  GromoreRewardCallBack({
+    this.onShow,
+    this.onClick,
+    this.onClose,
+    this.onFail,
+    this.onVerify,
+    this.onReady,
+    this.onUnReady,
+    this.onAdInfo,
+    this.onPopShow,
+  });
 }
 
 ///信息流广告回调
@@ -132,4 +145,21 @@ class GromoreSplashCallBack {
   ///
   /// [onAdInfo] 关闭
   GromoreSplashCallBack({this.onShow, this.onSkip, this.onFinish, this.onFail, this.onClose, this.onAdInfo, this.onClick, this.onReady});
+}
+
+///插屏广告回调
+class GromorePopAdCallBack {
+  GroShow? onShow;
+  GroClose? onClose;
+  GroFail? onFail;
+  GroClick? onClick;
+  GroReady? onReady;
+
+  GromorePopAdCallBack({
+    this.onShow,
+    this.onClick,
+    this.onClose,
+    this.onFail,
+    this.onReady,
+  });
 }

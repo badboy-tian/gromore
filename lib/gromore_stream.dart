@@ -9,8 +9,7 @@ import 'package:gromore/gromore_code.dart';
 /// @Email gstory0404@gmail.com
 /// @Description: stream
 
-const EventChannel gromoreEventEvent =
-    EventChannel("com.gstory.gromore/adevent");
+const EventChannel gromoreEventEvent = EventChannel("com.gstory.gromore/adevent");
 
 class GromoreStream {
   ///
@@ -20,53 +19,83 @@ class GromoreStream {
   ///
   /// [interactionAdCallBack] 插屏广告回调
   ///
-  static StreamSubscription initAdStream(
-      {GromoreRewardCallBack? gromoreRewardCallBack}) {
-    StreamSubscription groStream =
-        gromoreEventEvent.receiveBroadcastStream().listen((data) {
-          print("接受数据$data");
-          Map<String,dynamic> map = Map<String,dynamic>.from(data);
+  static StreamSubscription initAdStream({
+    GromoreRewardCallBack? gromoreRewardCallBack,
+    GromorePopAdCallBack? gromorePopAdCallBack,
+  }) {
+    StreamSubscription groStream = gromoreEventEvent.receiveBroadcastStream().listen((data) {
+      print("接受数据$data");
+      Map<String, dynamic> map = Map<String, dynamic>.from(data);
       switch (map[GromoreAdType.adType]) {
         case GromoreAdType.rewardAd:
-          switch(map[GromoreAdMethod.onAdMethod]){
+          switch (map[GromoreAdMethod.onAdMethod]) {
             case GromoreAdMethod.onShow:
-              if(gromoreRewardCallBack?.onShow != null) {
+              if (gromoreRewardCallBack?.onShow != null) {
                 gromoreRewardCallBack?.onShow!();
               }
               break;
             case GromoreAdMethod.onClose:
-              if(gromoreRewardCallBack?.onClose != null){
+              if (gromoreRewardCallBack?.onClose != null) {
                 gromoreRewardCallBack?.onClose!();
               }
               break;
             case GromoreAdMethod.onFail:
-              if(gromoreRewardCallBack?.onFail != null){
+              if (gromoreRewardCallBack?.onFail != null) {
                 gromoreRewardCallBack?.onFail!(GromoreError.fromJson(map));
               }
               break;
             case GromoreAdMethod.onClick:
-              if(gromoreRewardCallBack?.onClick != null){
+              if (gromoreRewardCallBack?.onClick != null) {
                 gromoreRewardCallBack?.onClick!();
               }
               break;
             case GromoreAdMethod.onVerify:
-              if(gromoreRewardCallBack?.onVerify != null){
+              if (gromoreRewardCallBack?.onVerify != null) {
                 gromoreRewardCallBack?.onVerify!(GromoreVerify.fromJson(map));
               }
               break;
             case GromoreAdMethod.onReady:
-              if(gromoreRewardCallBack?.onReady != null){
+              if (gromoreRewardCallBack?.onReady != null) {
                 gromoreRewardCallBack?.onReady!();
               }
               break;
             case GromoreAdMethod.onUnReady:
-              if(gromoreRewardCallBack?.onUnReady != null){
+              if (gromoreRewardCallBack?.onUnReady != null) {
                 gromoreRewardCallBack?.onUnReady!();
               }
               break;
             case GromoreAdMethod.onAdInfo:
-              if(gromoreRewardCallBack?.onAdInfo != null){
+              if (gromoreRewardCallBack?.onAdInfo != null) {
                 gromoreRewardCallBack?.onAdInfo!(GromoreAdInfo.fromJson(map));
+              }
+              break;
+          }
+          break;
+        case GromoreAdType.interactAd:
+          switch (map[GromoreAdMethod.onAdMethod]) {
+            case GromoreAdMethod.onShow:
+              if (gromorePopAdCallBack?.onShow != null) {
+                gromorePopAdCallBack?.onShow!();
+              }
+              break;
+            case GromoreAdMethod.onClose:
+              if (gromorePopAdCallBack?.onClose != null) {
+                gromorePopAdCallBack?.onClose!();
+              }
+              break;
+            case GromoreAdMethod.onFail:
+              if (gromorePopAdCallBack?.onFail != null) {
+                gromorePopAdCallBack?.onFail!(GromoreError.fromJson(map));
+              }
+              break;
+            case GromoreAdMethod.onClick:
+              if (gromorePopAdCallBack?.onClick != null) {
+                gromorePopAdCallBack?.onClick!();
+              }
+              break;
+            case GromoreAdMethod.onReady:
+              if (gromorePopAdCallBack?.onReady != null) {
+                gromorePopAdCallBack?.onReady!();
               }
               break;
           }

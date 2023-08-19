@@ -66,4 +66,7 @@ class GromoreAdMethod {
 
   ///广告跳过回调
   static const String onSkip = "onSkip";
+
+  ///弹窗广告展示
+  static const String onPopShow = "onPopShow";
 }

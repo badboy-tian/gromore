@@ -1,6 +1,7 @@
 #import "GromorePlugin.h"
 #import "BUAdSDK/BUAdSDK.h"
 #import "GromoreRewardAd.h"
+#import "GromorePopAd.h"
 #import "GroLogUtil.h"
 #import "GromoreEvent.h"
 #import "GromoreNativeAd.h"
@@ -67,7 +68,11 @@
     }else if([@"showRewardAd" isEqualToString:call.method]){
         [[GromoreRewardAd sharedInstance] showAd];
         result(@YES);
-    } else {
+    } else if([@"loadPopAd" isEqualToString:call.method]){
+        [[GromorePopAd sharedInstance] showAd:call.arguments];
+        result(@YES);
+        //显示激励广告
+    }else {
         result(FlutterMethodNotImplemented);
     }
 }

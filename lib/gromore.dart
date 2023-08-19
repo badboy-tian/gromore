@@ -75,4 +75,21 @@ class Gromore {
   static Future<bool> showRewardAd() async {
     return await _channel.invokeMethod("showRewardAd", {});
   }
+
+  ///
+  /// # 弹窗广告
+  ///
+  /// [androidId] android广告ID
+  ///
+  /// [iosId] ios广告ID
+  ///
+  static Future<bool> loadPopAd({
+    required String androidId,
+    required String iosId,
+  }) async {
+    return await _channel.invokeMethod("loadPopAd", {
+      "androidId": androidId,
+      "iosId": iosId,
+    });
+  }
 }

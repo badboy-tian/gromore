@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'gromore'
-  s.version          = '0.0.2'
+  s.version          = '0.0.4'
   s.summary          = '穿山甲gromore聚合广告插件flutter版'
   s.description      = <<-DESC
 穿山甲gromore聚合广告插件flutter版
