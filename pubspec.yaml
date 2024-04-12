@@ -1,10 +1,10 @@
 name: gromore
-description: "穿山甲gromore聚合广告插件flutter版"
+description: "gromore"
 version: 0.0.3
 homepage: https://github.com/gstory0404/gromore
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: '>=2.15.0 <3.0.0'
   
 dependencies:
   flutter:
